@@ -25,3 +25,27 @@ vim.keymap.set("n", "<leader>fw", ":Telescope grep_string<CR>")
 --vim.colorscheme = "tokyonight"
 --vim.api.colorscheme = "tokyonight"
 vim.cmd("colorscheme tokyonight")
+
+
+-- LSP
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"rust_analyzer",
+	},
+})
+require("mason-lspconfig").setup_handlers({
+	function(server_name)
+		require("lspconfig")[server_name].setup({})
+	end,
+})
+
+-- autocomplete with LSP
+-- TODO
+
+--require('mason-null-ls').setup({
+--	automatic_installation = true,
+--	automatic_setup = true,
+--})
+
