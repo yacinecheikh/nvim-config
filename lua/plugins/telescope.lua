@@ -5,7 +5,28 @@ return {
 		"nvim-telescope/telescope-fzf-native.nvim",
 		"nvim-telescope/telescope-media-files.nvim",
 		"nvim-tree/nvim-web-devicons",
+		"nvim-telescope/telescope-file-browser.nvim",
+		"ahmedkhalf/project.nvim",
 	},
+	config = function()
+		require("telescope").setup {
+			extensions = {
+				file_browser = {
+					theme = "ivy",
+					hijack_netrw = true,
+					mappings = {
+						["i"] = {
+							-- insert mode mappings
+						},
+						["n"] = {
+							-- normal mode mappings
+						},
+					},
+				},
+			},
+		}
+	end,
+
 	--config = function()
 	--	require("telescope").setup {
 	--		defaults = {
