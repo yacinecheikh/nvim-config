@@ -4,6 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-fzf-native.nvim",
 		"nvim-telescope/telescope-media-files.nvim",
+		"nvim-tree/nvim-web-devicons",
 	},
 	--config = function()
 	--	require("telescope").setup {
