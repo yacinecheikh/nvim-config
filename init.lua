@@ -19,3 +19,9 @@ vim.keymap.set("n", "<leader>fr", ":Telescope resume<CR>")
 vim.keymap.set("n", "<leader>fs", ":Telescope search_history<CR>")
 vim.keymap.set("n", "<leader>fw", ":Telescope grep_string<CR>")
 
+vim.keymap.set("n", "<leader>ft", ":Neotree<CR>")
+vim.keymap.set("n", "<leader>fw", ":Telescope grep_string<CR>")
+
+--vim.colorscheme = "tokyonight"
+--vim.api.colorscheme = "tokyonight"
+vim.cmd("colorscheme tokyonight")
