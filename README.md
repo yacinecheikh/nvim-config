@@ -78,6 +78,17 @@ To use the free version and skip the authentication, run `SupermavenUseFree`.
 
 ### LSP
 
-LSP servers are managed by the Mason plugin. To manage LSP servers, run `:Mason`
+LSP servers are managed by the Mason plugin. To manage LSP servers, simply run `:Mason`.
+
+
+### Package manager
+
+The package manager used is Lazy.nvim. To manage plugins and update them, run `:Lazy` and press `U`.
+
+### Key mappings
+
+Most of the key mappings are kept by default. The key mappings I defined are written in `init.lua`. They all start by a comma (`,`) and use no special key combination (Ctrl, Shift, Meta).
+
+For autocompletions, I tried configure everything the same way as other IDEs, with Tab/Shift-Tab to navigate, and Enter (CR) to confirm.
 
 
