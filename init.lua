@@ -1,5 +1,7 @@
 -- define <Leader> key to ,
 vim.g.mapleader = ","
+-- show line numbers
+vim.opt.number = true
 
 require("config.lazy")
 
@@ -35,14 +37,37 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 	},
 })
+
+
+
+-- setup LSP servers and advertise the capabilities of nvim-cmp
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
-		require("lspconfig")[server_name].setup({})
+		if server_name == "lua_ls" then
+			return
+		end
+		require("lspconfig")[server_name].setup({
+			capabilities = capabilities,
+		})
+		--require("lspconfig")[server_name].setup({})
 	end,
 })
 
--- autocomplete with LSP
--- TODO
+-- setup the vim global for nvim lua LSP
+require("lspconfig").lua_ls.setup({
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+			--workspace = {
+			--	library = vim.api.nvim_get_runtime_file("", true),
+			--},
+		},
+	},
+})
 
 --require('mason-null-ls').setup({
 --	automatic_installation = true,
