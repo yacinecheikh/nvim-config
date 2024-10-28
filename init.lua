@@ -24,6 +24,14 @@ vim.keymap.set("n", "<leader>fw", ":Telescope grep_string<CR>")
 vim.keymap.set("n", "<leader>ft", ":Neotree<CR>")
 vim.keymap.set("n", "<leader>fw", ":Telescope grep_string<CR>")
 
+
+-- always use system clipboard
+-- vim.command("set clipboard=unnamedplus")
+
+-- use system clipboard with ,y and ,p
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>p", "\"+p")
+
 --vim.colorscheme = "tokyonight"
 --vim.api.colorscheme = "tokyonight"
 vim.cmd("colorscheme tokyonight")
@@ -33,9 +41,10 @@ vim.cmd("colorscheme tokyonight")
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = {
-		"rust_analyzer",
-	},
+	-- add your LSP servers here to make sure they are installed
+	--ensure_installed = {
+	--	"rust_analyzer",
+	--},
 })
 
 
