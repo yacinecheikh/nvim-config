@@ -1,8 +1,12 @@
 return {
 	"supermaven-inc/supermaven-nvim",
-	config = function()
-		require("supermaven-nvim").setup({})
-	end,
+	-- start supermaven manually with :SupermavenStart
+	cmd = {
+		"SupermavenStart",
+	},
+	--config = function()
+	--	require("supermaven-nvim").setup({})
+	--end,
 	opts = {
 		keymaps = {
 			--accept_suggestion = "<Tab>",
