@@ -40,7 +40,12 @@ Other fonts can be downloaded on [nerdfonts.com](https://www.nerdfonts.com/).
 
 Install a C compiler (needed for the tree-sitter plugin to install parsers for different syntaxes):
 ```sh
-apt install gcc
+sudo apt install gcc
+```
+
+Install fd:
+```sh
+sudo apt install fd-find
 ```
 
 
@@ -63,6 +68,19 @@ unzip NerdFontsSymbolsOnly.zip -d ~/.fonts/NerdFontsSymbolsOnly/
 [comment]: # (
 Same for Noto
 )
+
+## Checks
+
+The `:checkhealth` command can be used to check the status of plugins.
+
+Specifically, the plugins to check to avoid missing critical features are:
+- lazy
+- telescope
+- nvim-treesitter
+- mason
+- vim.lsp
+
+
 
 
 ## Useage
@@ -91,4 +109,15 @@ Most of the key mappings are kept by default. The key mappings I defined are wri
 
 For autocompletions, I tried configure everything the same way as other IDEs, with Tab/Shift-Tab to navigate, and Enter (CR) to confirm.
 
+### Telescope
+
+Telescope is a versatile plugin for quick file search using fuzzy search. It also includes a file browser, a keymap viewer, a project manager, and more.
+The Telescope menu can be used with the `:Telescope` command, but I have also defined keymappings for the tasks I use the most in `init.lua`.
+
+I suggest you browse the Telescope menu (`,t`) so that you can get used to its features and then define your own shortcuts.
+
+### Neotree
+
+The `:Neotree` command can be used to display a file tree on the side.
+The ,ft key mapping can also be used to toggle the tree.
 
