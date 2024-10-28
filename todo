@@ -1,0 +1,5 @@
+-refactor used plugins and load order
+-use opts instead of config where possible
+-use lazy=false for plugins that need to be loaded quickly, and lazy=true for dependencies
+-isolate key mappings
+
